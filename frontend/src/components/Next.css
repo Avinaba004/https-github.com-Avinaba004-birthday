@@ -1,0 +1,166 @@
+/* Next.css */
+
+body {
+  overflow-y: auto; /* Enable scrolling for the entire page */
+  background-color: #ffeded; /* Set initial background color */
+  animation: changeBackgroundColor 10s infinite alternate; /* Color-changing background animation */
+}
+
+@keyframes changeBackgroundColor {
+  0% {
+    background-color: #0348e8; /* Initial background color */
+  }
+  50% {
+    background-color: #18c9c6; /* Color transition */
+  }
+  100% {
+    background-color: #4b2f2f; /* Back to initial background color */
+  }
+}
+
+.next-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: fit-content;
+  position: relative; /* Position the stars container relative to the page */
+}
+
+.stars {
+  position: absolute; /* Position the stars container absolutely */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Background image of stars */
+  animation: sparkle 10s linear infinite alternate; /* Sparkling animation */
+  pointer-events: none; /* Make sure the stars container doesn't interfere with mouse events */
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0.5; /* Initial opacity */
+  }
+  100% {
+    opacity: 1; /* Max opacity */
+  }
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.birthday-text {
+  font-size: 16px;
+}
+
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.photo {
+  width: 150px;
+  height: 150px;
+  background-color: #ffd700;
+  margin: 10px;
+  
+  animation: rotatePhoto 10s linear infinite alternate; /* Continuous rotation animation */
+}
+
+@keyframes rotatePhoto {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.message-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.message-list {
+  padding: 10px 0px 0px 10px;
+  max-height: 60vh; /* Set maximum height for the message list */
+  overflow-y: auto; /* Add vertical scroll if necessary */
+  list-style-type: disc; 
+}
+
+.message {
+  font-size: 18px;
+  margin-bottom: 5px;
+  max-width: 80%; /* Limit the width of each message */
+  word-wrap: break-word; /* Enable text wrapping */
+  padding-bottom: 10px;
+  text-align: center; /* Center align the messages */
+  padding-left: 10%;
+}
+.delete-button {
+  margin-left: 10px;
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #ff4757;
+}
+
+.back-button {
+  padding: 10px 20px;
+  background-color: #ff6b6b;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #ff4757;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .message-title {
+    font-size: 20px;
+  }
+
+  .message {
+    font-size: 16px;
+    max-width: 30%; /* Adjust the maximum width for smaller screens */
+    padding-left: 35%;
+  }
+
+  .message-list {
+    max-height: 50vh; /* Adjust maximum height for smaller screens */
+    overflow-y: auto; /* Add vertical scroll for smaller screens */
+    
+  }
+
+  .back-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
